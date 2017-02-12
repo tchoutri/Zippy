@@ -1,6 +1,6 @@
-========================
+==============================
 Zippy |elixir| |hex| |license|
-========================
+==============================
 
 Zippy is an Elixir implementation of Fred Hebert's Zippers_ erlang library.
 The main motivation was of course to better grasp this kind of data structures, but I also added my own grain of salt in some parts:
