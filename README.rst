@@ -1,5 +1,5 @@
 ========================
-Zippy |elixir| |license|
+Zippy |elixir| |hex| |license|
 ========================
 
 Zippy is an Elixir implementation of Fred Hebert's Zippers_ erlang library.
@@ -51,6 +51,10 @@ SOFTWARE.
 .. |elixir| image:: https://cdn.rawgit.com/tchoutri/Exon/master/elixir.svg
             :target: http://elixir-lang.org
             :alt: Made in Elixir
+
+.. |hex|    image:: https://img.shields.io/hexpm/v/zippy.svg
+            :target: https://hex.pm/packages/zippy
+            alt: Version on Hex.PM
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg
              :target: https://opensource.org/licenses/MIT 
