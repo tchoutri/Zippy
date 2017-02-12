@@ -10,6 +10,36 @@ The main motivation was of course to better grasp this kind of data structures, 
 * Idiomatic function names (``if_leaf`` ➜ ``leaf?``) when needed.
 * Functions' first argument is the data structure, which allows chaining operations on it with the ``|>`` operator.
 
+This package follows semantic versioning::
+    
+    Major.Minor.Patch
+      └────┼─────┼──> Incompatible API changes
+           └─────┼────> More features
+                 └──────> Bug Fixing
+
+
+Examples
+--------
+
+Let's say we can modelize the wanderings of a user in their filesystem's hierarchy with a ``{timestamp, path}`` tuple.
+The code would look like that:
+
+.. code:: Elixir
+
+    alias Zippy.ZList, as: Z
+    zlist = Z.new
+    timestamp = fn -> DateTime.utc_now \|> DateTime.to_unix end
+
+    hist0 = zlist \|> Z.insert({timestamp.(), "/home"})
+    hist1 = hist0 \|> Z.next \|> Z.insert({timestamp.(), "/home/foo"})
+    hist2 = hist1 \|> Z.next \|> Z.insert({timestamp.(), "/home/foo/.local"})
+    hist3 = hist2 \|> Z.next \|> Z.insert({timestamp.(), "/home/foo/.local/bin"})
+
+If we wanted to browse the events list, we would use the ``next/2`` and ``prev/2`` functions from ``Zippy.ZList``.
+
+.. code:: Elixir
+
+
 
 Installation
 ------------
