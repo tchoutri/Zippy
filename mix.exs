@@ -3,12 +3,15 @@ defmodule Zippy.Mixfile do
 
   def project do
     [app: :zippy,
+     name: "Zippy",
+     source_url: "https://github.com/tchoutri/zippy",
      version: "0.0.1",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: description(),
      package: package(),
+     docs: [main: "Zippy", extras: ["README.rst"]]
      deps: deps()]
   end
 
