@@ -53,8 +53,8 @@ SOFTWARE.
             :alt: Made in Elixir
 
 .. |hex| image:: https://img.shields.io/hexpm/v/zippy.svg
-            :target: https://hex.pm/packages/zippy
-            alt: Version on Hex.PM
+         :target: https://hex.pm/packages/zippy
+         :alt: Version on Hex.PM
 
 .. |license| image:: https://img.shields.io/badge/license-MIT-blue.svg
              :target: https://opensource.org/licenses/MIT 
