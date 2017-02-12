@@ -11,7 +11,7 @@ defmodule Zippy.Mixfile do
      start_permanent: Mix.env == :prod,
      description: description(),
      package: package(),
-     docs: [main: "Zippy", extras: ["README.rst"]]
+     docs: [main: "Zippy"],
      deps: deps()]
   end
 
