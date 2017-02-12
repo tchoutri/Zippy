@@ -46,7 +46,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-:: _Zippers: https://github.com/ferd/zippers/
+.. _Zippers: https://github.com/ferd/zippers/
 
 .. |elixir| image:: https://cdn.rawgit.com/tchoutri/Exon/master/elixir.svg
             :target: http://elixir-lang.org
