@@ -52,7 +52,7 @@ SOFTWARE.
             :target: http://elixir-lang.org
             :alt: Made in Elixir
 
-.. |hex|    image:: https://img.shields.io/hexpm/v/zippy.svg
+.. |hex| image:: https://img.shields.io/hexpm/v/zippy.svg
             :target: https://hex.pm/packages/zippy
             alt: Version on Hex.PM
 
