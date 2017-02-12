@@ -7,7 +7,7 @@ The main motivation was of course to better grasp this kind of data structures, 
 
 * When returning an ``{:ok, value}`` tuple in case of success, functions will also return a ``{:error, nil}`` in case of failure.
 * All ``:undefined`` atoms have been replaced by ``nil``, which I find more idiomatic.
-* Idiomatic function names (``if_leaf`` → ``leaf?``) when needed.
+* Idiomatic function names (``if_leaf`` ➜ ``leaf?``) when needed.
 * Functions' first argument is the data structure, which allows chaining operations on it with the ``|>`` operator.
 
 
@@ -15,6 +15,7 @@ Installation
 ------------
 
 .. code:: elixir
+
     def deps do
       [{:zippy, "~> 0.0.1"}]
     end
