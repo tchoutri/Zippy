@@ -11,6 +11,26 @@ defmodule Zippy.ZList do
   @typedoc "A Zipper list"
   @type t :: {prev::list(), next::list()}
 
+  defimpl Enumerable, for: Tuple do
+    def reduce(_,            {:halt, acc}, _fun),   do: {:halted, acc}
+    def reduce(list,         {:suspend, acc}, fun), do: {:suspended, acc, &reduce(list, &1, fun)}
+    def reduce({pre, post},  {:cont, _acc}, fun) do
+      acc1 = Enum.map(pre, fun)
+      acc2 = Enum.map(post, fun)
+      {:done, {acc1, acc2}}
+    end
+
+    def member?({pre, post}, element) do
+      cond do
+        r = Enum.member?(pre, element)  -> {:ok, r}
+        r = Enum.member?(post, element) -> {:ok, r}
+        true -> {:error, __MODULE__}
+      end
+    end
+
+    @spec count(ZList.t) :: {:ok, non_neg_integer()} | {:error, module}
+    def   count({pre, post}), do: {:ok, (length pre) + (length post)}
+  end
 
   @doc "This function creates an empty Zipper list."
   @spec new() :: ZList.t
@@ -27,6 +47,15 @@ defmodule Zippy.ZList do
   def   to_list({pre, post}) do
     Enum.reverse(pre) ++ post
   end
+
+  # @doc "invokes `fun` for each element of the zipper list, which for a matter of convenience, is exported as a list."
+  # @spec reduce(ZList.t, any(), (element(), any() -> any())) :: list()
+  # def   reduce(zipper, acc, fun) do
+  #   do_reduce(to_list(zipper), [], fun)
+  # end
+  #
+  # defp  do_reduce([], acc, fun),    do: acc
+  # defp  do_reduce([h|t], acc, fun), do: do_reduce(t, fun.(h) ++ acc, fun)
 
   @doc """
   This function accesses the previous element of the zipper list.
