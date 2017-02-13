@@ -12,22 +12,6 @@ defmodule Zippy.ZList do
   @type t :: {prev::list(), next::list()}
 
 
-  defimpl Enumerable, for: ZList.t() do
-    def reduce(_,            {:halt, acc}, _fun),   do: {:halted, acc}
-    def reduce(list,         {:suspend, acc}, fun), do: {:suspended, acc, &reduce(list, &1, fun)}
-    def reduce({pre, post},  {:cont, _acc}, fun) do
-      acc1 = Enum.map(pre, fun)
-      acc2 = Enum.map(post, fun)
-      {acc1, acc2}
-    end
-
-    def member?({pre, post}, element) do
-      Enum.member?(pre, element) || Enum.member?(post, element)
-    end
-
-    def count({pre, post}), do: (length pre) + (length post)
-  end
-
   @doc "This function creates an empty Zipper list."
   @spec new() :: ZList.t
   def   new, do: {[], []}
