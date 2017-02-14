@@ -82,7 +82,7 @@ defmodule Zippy.ZList do
   This function returns the `current` element of the zipper list."
   If the zipper is empty, then `nil` is returned.
   """
-  @spec current(ZList.t) :: ZList.t | nil
+  @spec current(ZList.t) :: {:ok, ZList.t} | {:error, nil}
   def   current({_, []}),          do: nil
   def   current({_, [current|_]}), do: current
 
