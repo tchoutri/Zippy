@@ -40,8 +40,8 @@ defmodule Zippy.ZListTest do
   end
 
   test "current/1", context do
-    assert Z.current(context[:mixed]) == 1
-    assert  Z.current(Z.new)          == nil
+    assert Z.current(context[:mixed]) == {:ok, 1}
+    assert  Z.current(Z.new)          == {:error, nil}
   end
 
   test "replace/2", context do
