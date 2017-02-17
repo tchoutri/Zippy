@@ -72,10 +72,11 @@ defmodule Zippy.ZBinTree do
     |> up
   end
 
+  @doc "Adds a right child to the tree"
   @spec add_right(ZBinTree.t, term()) :: ZBinTree.t
   def   add_right(zipper, new_branch) do
     zipper
-    |> left
+    |> right
     |> replace(new_branch)
     |> up
   end
