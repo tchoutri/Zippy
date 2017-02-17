@@ -1,0 +1,3 @@
+2017-02-17  Théophile Choutri <theophile@choutri.eu>
+
+	* Fixed ZBinTree.right/1 (c14ed64)
