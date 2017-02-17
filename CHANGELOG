@@ -1,3 +1,4 @@
 2017-02-17  Théophile Choutri <theophile@choutri.eu>
 
+	* Added changelog (82cd46d)
 	* Fixed ZBinTree.right/1 (c14ed64)
