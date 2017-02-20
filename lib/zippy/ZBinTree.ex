@@ -20,8 +20,13 @@ defmodule Zippy.ZBinTree do
   @typedoc "A Zipper binary tree"
   @type  t() :: {thread(any()), node(any())}
 
-  # defimpl Enumerable, for: Tuple do
+  defimpl Enumerable, for: Tuple do
 
+    def reduce(bintree, acc, fun) do
+  
+    end
+
+  end
   # end
 
   ## Functions
